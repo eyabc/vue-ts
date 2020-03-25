@@ -1,24 +1,25 @@
 <template>
   <div class="home">
-    <message />
-    <children :parentMessage="message"/>
-    <button @click="changeMessage">메세지를 바꿔줄게요.</button>
+    <children @counter="counter" />
+    <p>
+      부모에서 숫자를 보여줍니다 : {{ count }}
+    </p>
   </div>
 </template>
 
 <script lang="ts">
-import { Message, Children } from '@/components/Common';
+import { Children } from '@/components/Common';
 import { Component, Vue } from 'vue-property-decorator';
 @Component({
   components: {
-    Message, Children
+    Children
   },
 })
 export default class Home extends Vue {
-  message: string = 'hello world';
+  count:number = 0;
 
-  changeMessage() {
-    this.message = 'change'
+  counter() {
+    this.count++;
   }
 }
 </script>
