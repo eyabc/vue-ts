@@ -21,5 +21,7 @@ yarn-error.log*
 *.sw?
 
 mixins/node_modules
+class-based-component/node_modules
+vuex/nodes_modules
 
 
