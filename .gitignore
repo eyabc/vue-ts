@@ -23,5 +23,6 @@ yarn-error.log*
 mixins/node_modules
 class-based-component/node_modules
 vuex/nodes_modules
+module-vuex/nodes_modules
 
 

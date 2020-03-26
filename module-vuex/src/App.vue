@@ -14,7 +14,7 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class App extends Vue {
   created() {
     console.log(this.$store)
-    this.$store.dispatch('moduleA/setRootData', 'test');
+    this.$store.dispatch('setRootData', 'test');
   }
 }
 </script>
