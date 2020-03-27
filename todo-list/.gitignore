@@ -19,11 +19,3 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-
-mixins/node_modules
-class-based-component/node_modules
-vuex/nodes_modules
-module-vuex/nodes_modules
-
-
-
