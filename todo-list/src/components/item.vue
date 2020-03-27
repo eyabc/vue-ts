@@ -18,11 +18,15 @@
       @Prop() readonly status!: 'active' | 'clear';
       @Prop() readonly title!: string;
 
-      changeStatus() {
-
+      changeStatus($event: Event) {
+        const checked: boolean = $event.target.checked;
+        const arg = { id: this.id, status: 'active' };
+        if (checked) arg.status = 'clear';
+        this.$store.commit('changeStatus', arg);
       }
-      removeItem() {
 
+      removeItem() {
+        this.$store.commit('removeItem', this.id);
       }
     }
 </script>
