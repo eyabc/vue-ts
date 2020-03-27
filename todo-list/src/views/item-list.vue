@@ -30,7 +30,7 @@
     renderList: any[] = [];
 
     created() {
-      this.initRenderList(this.$route.params.status);
+      this.$store.dispatch('initData')
     }
 
     initRenderList(status: 'active' | 'clear') {
