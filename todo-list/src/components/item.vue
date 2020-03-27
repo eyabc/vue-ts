@@ -10,23 +10,23 @@
     </div>
 </template>
 <script lang="ts">
-    import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 
-    @Component
-    export default class Item extends Vue{
-      @Prop() readonly id!: string;
-      @Prop() readonly status!: 'active' | 'clear';
-      @Prop() readonly title!: string;
+@Component
+export default class Item extends Vue {
+  @Prop() readonly id!: string;
+  @Prop() readonly status!: 'active' | 'clear';
+  @Prop() readonly title!: string;
 
-      changeStatus($event: Event) {
-        const checked: boolean = $event.target.checked;
-        const arg = { id: this.id, status: 'active' };
-        if (checked) arg.status = 'clear';
-        this.$store.commit('changeStatus', arg);
-      }
+  changeStatus($event: Event) {
+    const checked: boolean = ($event.target as HTMLInputElement).checked;
+    const arg = { id: this.id, status: 'active' };
+    if (checked) { arg.status = 'clear'; }
+    this.$store.commit('changeStatus', arg);
+  }
 
-      removeItem() {
-        this.$store.commit('removeItem', this.id);
-      }
-    }
+  removeItem() {
+    this.$store.commit('removeItem', this.id);
+  }
+}
 </script>

@@ -8,15 +8,15 @@
 </template>
 
 <script lang="ts">
-  import {Vue, Component} from 'vue-property-decorator';
-  import * as common from '@/components';
+import {Vue, Component} from 'vue-property-decorator';
+import * as common from '@/components';
 
-  @Component({
-    components: { ...common }
-  })
-  export default class App extends Vue {
+@Component({
+  components: { ...common },
+})
+export default class App extends Vue {
 
-  }
+}
 </script>
 
 <style>
